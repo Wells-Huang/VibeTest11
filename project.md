@@ -30,21 +30,41 @@
 | `_pages/` | **獨立頁面**：存放「關於」、「聯絡」等獨立頁面的 Markdown 檔案。 |
 | `docs/` | **文件網站**：此目錄本身包含一個完整的 Jekyll 子專案，用於建立此主題的說明文件。 |
 
-#### 執行與啟動
+#### 執行與啟動 (Windows 環境)
 
-要預覽此網站，您需要在本機環境中安裝 Ruby、Bundler 和 Jekyll。
+要在您的 Windows 電腦上成功預覽此網站，您需要先建立完整的 Ruby 開發環境。`bundle` 指令找不到的錯誤表示您的環境尚未設定完成。
 
-1.  **安裝相依套件**：
-    ```shell
-    bundle install
-    ```
-    此指令會根據 `Gemfile` 安裝所有必要的 gems。
+請依照以下步驟操作：
 
-2.  **啟動本地伺服器**：
-    ```shell
-    bundle exec jekyll serve
-    ```
-    此指令會建置網站，並在 `http://127.0.0.1:4000` 啟動一個本地開發伺服器。您可以透過瀏覽器存取此網址即時預覽變更。
+1.  **安裝 Ruby+Devkit**：
+    *   前往 [RubyInstaller for Windows](https://rubyinstaller.org/downloads/) 網站。
+    *   下載並安裝 **Ruby+Devkit** 版本 (推薦標有 "RECOMMENDED" 的版本)。
+    *   在安裝程式的最後一個畫面，請務必勾選「**Run 'ridk install' to set up MSYS2...**」的選項。
+
+2.  **設定 MSYS2 工具鏈**：
+    *   Ruby 安裝結束後，會自動彈出一個命令提示字元視窗。
+    *   請在此視窗中選擇選項 `3`，以安裝 MSYS2 和 MINGW 開發工具鏈。等待安裝完成。
+
+3.  **安裝 Bundler 和 Jekyll**：
+    *   **重新開啟一個新的命令提示字元 (CMD) 或 PowerShell 視窗** (這非常重要，以確保系統能讀取到新的環境變數)。
+    *   執行以下指令來安裝 Bundler 和 Jekyll：
+        ```shell
+        gem install jekyll bundler
+        ```
+
+4.  **安裝專案相依套件**：
+    *   現在 `bundle` 指令應該可以正常運作了。請在專案的根目錄下執行：
+        ```shell
+        bundle install
+        ```
+    *   此指令會根據 `Gemfile` 安裝此專案所需的所有套件 (gems)。
+
+5.  **啟動本地伺服器**：
+    *   完成上述所有步驟後，執行以下指令來啟動網站：
+        ```shell
+        bundle exec jekyll serve
+        ```
+    *   網站將會建置並啟動於 `http://127.0.0.1:4000`。您現在可以透過瀏覽器存取此網址即時預覽。
 
 #### 結論
 
