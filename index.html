@@ -2,3 +2,38 @@
 layout: home
 author_profile: true
 ---
+
+<h2>最新文章</h2>
+
+<h3>我的專案作品</h3>
+
+{% for item in site.portfolio limit: 5 %}
+  <article class="archive-item">
+    <h4 class="archive-title">
+      <a href="{{ item.url }}">{{ item.title }}</a>
+    </h4>
+    <p class="archive-date"><time datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: "%Y年%m月%d日" }}</time></p>
+    {% if item.excerpt %}
+      <p class="archive-excerpt">{{ item.excerpt }}</p>
+    {% endif %}
+    {% if item.header.teaser %}
+      <img src="{{ item.header.teaser }}" alt="{{ item.title }}" style="max-width: 200px; height: auto; margin-top: 10px;">
+    {% endif %}
+  </article>
+{% endfor %}
+
+<hr>
+
+<h3>最新部落格</h3>
+
+{% for post in site.posts limit: 5 %}
+  <article class="archive-item">
+    <h4 class="archive-title">
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </h4>
+    <p class="archive-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y年%m月%d日" }}</time></p>
+    {% if post.excerpt %}
+      <p class="archive-excerpt">{{ post.excerpt }}</p>
+    {% endif %}
+  </article>
+{% endfor %}
