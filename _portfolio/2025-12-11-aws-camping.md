@@ -1,5 +1,6 @@
 ---
 title: "AWS Camping W1 HW3"
+date: 2025-12-11
 excerpt: "歐哥的AWS課程第一週作業 第3小題"
 header:
   teaser: "https://via.placeholder.com/500x300.png"

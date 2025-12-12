@@ -162,6 +162,19 @@ footer:
   since: "2013"
 
 
+# Collections
+collections:
+  portfolio:
+    output: true
+    permalink: /:collection/:path/
+  posts:
+    output: true
+    permalink: /:categories/:year/:month/:day/:title/
+  pages:
+    output: true
+    permalink: /:basename/
+
+
 # Reading Files
 include:
   - .htaccess
